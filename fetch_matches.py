@@ -3,7 +3,7 @@ from firebase_admin import credentials, db, initialize_app
 import time
 
 cred = credentials.Certificate('firebase-key.json')
-initialize_app(cred, {'databaseURL': 'https://ipl-fantasy-123.firebaseio.com'})  # Your URL
+initialize_app(cred, {'databaseURL': 'https://cricfantasy-4b50b-default-rtdb.firebaseio.com'})  # Your URL
 API_KEY = 'f85d5c48-411e-42ee-897a-97920d6249fa'  # Get from cricapi.com
 
 def fetch_matches():
