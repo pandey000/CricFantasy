@@ -1,0 +1,7 @@
+apiKey: "AIzaSyBjqmg-cH_hc8IoAUaDjdNbEUD9z0LCCcs",
+authDomain: "cricfantasy-4b50b.firebaseapp.com",
+databaseURL: "https://cricfantasy-4b50b-default-rtdb.firebaseio.com",
+projectId: "cricfantasy-4b50b",
+storageBucket: "cricfantasy-4b50b.firebasestorage.app",
+messagingSenderId: "175800757926",
+appId: "1:175800757926:web:c579d47f1e2dac045a0e67"
