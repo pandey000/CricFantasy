@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IPL Fantasy</title>
+    <style>
+        body { font-family: Arial; text-align: center; }
+    </style>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+</head>
+<body>
+    <h1>IPL Fantasy</h1>
+    <div id="auth">
+        <input id="email" type="email" placeholder="Email"><br><br>
+        <input id="password" type="password" placeholder="Password"><br><br>
+        <button onclick="login()">Login</button>
+        <button onclick="signup()">Signup</button>
+    </div>
+    <div id="main" style="display: none;">
+        <h2>Welcome!</h2>
+        <button onclick="auth.signOut()">Logout</button>
+    </div>
+    <script>
+        const firebaseConfig = {apiKey: "AIzaSyBjqmg-cH_hc8IoAUaDjdNbEUD9z0LCCcs",
+    authDomain: "cricfantasy-4b50b.firebaseapp.com",
+    databaseURL: "https://cricfantasy-4b50b-default-rtdb.firebaseio.com",
+    projectId: "cricfantasy-4b50b",
+    storageBucket: "cricfantasy-4b50b.firebasestorage.app",
+    messagingSenderId: "175800757926",
+    appId: "1:175800757926:web:c579d47f1e2dac045a0e67"};
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                document.getElementById('auth').style.display = 'none';
+                document.getElementById('main').style.display = 'block';
+            } else {
+                document.getElementById('auth').style.display = 'block';
+                document.getElementById('main').style.display = 'none';
+            }
+        });
+        function login() {
+            const email = document.getElementById('email').value;
+            const pass = document.getElementById('password').value;
+            auth.signInWithEmailAndPassword(email, pass).catch(e => alert(e.message));
+        }
+        function signup() {
+            const email = document.getElementById('email').value;
+            const pass = document.getElementById('password').value;
+            auth.createUserWithEmailAndPassword(email, pass).catch(e => alert(e.message));
+        }
+    </script>
+</body>
+</html>
