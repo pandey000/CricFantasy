@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+
+# VS Code
+.vscode/
+
+# Misc
+*.log
+firebase-key.json  # Keep sensitive keys out
